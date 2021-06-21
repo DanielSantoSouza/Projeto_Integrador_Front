@@ -1,45 +1,31 @@
-.navbar{
-  background-color: #006B54;
+.card {
+    background-color: #006B54;
+    border-radius: 1%;
 }
 
-a{
-  color: rgb(255, 255, 255);
+.fotoImpar {
+    border-radius: 50%;
 }
 
-
-.content{
-  width:  70.27818448023426%;
-  margin: 12px;
-  padding: 20px 0;
+.fotoPar {
+    border-radius: 50%;
 }
 
-.logo{
-  width: 70px;
-  height: 70px;
-}
-.logo{
-  width: 70px;
-  height: 70px;
-}
-.img-1 {
-  width: 50px;
-
-  Height: 250px;
-
-  Top: 40px;
-
-  Left: 80px;
-
+.nome {
+    font-weight: bold;
+    font-size: 23pt;
+    font-family: monospace;
+    color: white;
 }
 
-.text-titulo{
-  color:black
-  
+.descricao {
+    font-size: 13pt;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
 }
-.text-tm{
- width: 300;
- height: 150; 
-}
-.text-link{
-  color:darkblue
+
+.text-link,
+p {
+    color: rgb(133, 195, 253);
+    font-size: 10;
 }
