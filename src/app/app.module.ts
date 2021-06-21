@@ -12,14 +12,17 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ProdutoComponent } from './produto/produto.component';
-import { ChatGeralComponent } from './chat-geral/chat-geral.component';
-import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { SomosComponent } from './somos/somos.component';
 import { ProdutoEditComponent } from './edit/produto-edit/produto-edit.component';
 import { ProdutoDeleteComponent } from './delete/produto-delete/produto-delete.component';
 import { FrutaComponent } from './fruta/fruta.component';
 import { LegumesComponent } from './legumes/legumes.component';
 import { VerdurasComponent } from './verduras/verduras.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 
 
 @NgModule({
@@ -29,19 +32,19 @@ import { VerdurasComponent } from './verduras/verduras.component';
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
+    MinhaContaComponent,
+
     InicioComponent,
     ProdutoComponent,
-    ChatGeralComponent,
-    SomosComponent,
-    FrutaComponent,
 
-    MinhaContaComponent,
+  
     SomosComponent,
     ProdutoEditComponent,
     ProdutoDeleteComponent,
     FrutaComponent,
     LegumesComponent,
-    VerdurasComponent
+    VerdurasComponent,
+    AlertasComponent
 
   ],
 
@@ -49,9 +52,15 @@ import { VerdurasComponent } from './verduras/verduras.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule,
   ],
-  providers: [],
+
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

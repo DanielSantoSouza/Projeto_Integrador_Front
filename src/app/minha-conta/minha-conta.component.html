@@ -1,40 +1,46 @@
 <div class="container">
     <div class="row">
-      <div class="col mt-5 mb-5">
-        <img src="https://i.imgur.com/fS4i0cC.jpg" alt="Imagem do user" width="200px" height="150px"
-        class="img-fluid rounded-circle">
-      </div>
+        <div class="col mt-5 mb-5">
+            <img src="https://imgur.com/BcfvN6z.jpg" alt="Imagem do user" width="200px" height="150px" class="img-fluid rounded-circle">
+        </div>
 
-<div class="col-9 mt-5 mb-5">
-    <h1 class="card-title">Perfil</h1>
-    <h6 class="card-subtitle mb-2 text-muted">Meus dados</h6>
-    <br>
-  <form>
-    <fieldset disabled>
-      <div class="form-group">
-        <label for="disabledTextInput">Nome</label>
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="Nome Completo">
-      </div>
-      <div class="form-group">
-        <label for="disabledSelect">E-mail</label>
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="email@efas.com">
-      </div>
-      <div class="form-group">
-        <label for="disabledSelect">Telefone</label>
-        <input type="text" id="disabledTextInput" class="form-control" placeholder="(DDD) 99999-9999">
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-        <label class="form-check-label" for="disabledFieldsetCheck">
-          O telefone é meu WhatsApp.
-        </label>
-      </div>
-      <br>
-      <button type="submit" class="btn btn-success">Enviar</button>
-    </fieldset>
-  </form>
+        <div class="col-9 mt-5 mb-5">
+            <h1 class="card-title">Atualizar meu usuário</h1>
+            <h6 class="card-subtitle mb-2 text-muted">Meus dados</h6>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input [(ngModel)]='user.nome' type="text" id="nome" class="form-control" placeholder="Nome Completo">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input [(ngModel)]='user.email' type="text" id="email" class="form-control" placeholder="email@efas.com">
+                </div>
 
-  <hr class="mt-6 mb-6">
-  <p class="text-center mr-auto d-flex align-items-center">
-     <a routerLink="/sair"> Sair da Conta</a>
-  </p>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmsenha">Confirmar Senha</label>
+                    <input [(ngModel)]='user.senha' class="form-control" type="password" name="confirmsenha" id="confirmsenha" placeholder="Confirme sua senha">
+                </div>
+
+                <div class="form-group">
+                    <label for="celular">Telefone</label>
+                    <input type="text" [(ngModel)]='user.celular' id="celular" class="form-control" placeholder="55(DDD)999999999">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
+                    <label class="form-check-label" for="celular"></label> O telefone é meu WhatsApp.
+                </div>
+
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-danger mr-4" routerLink='/inicio'>Cancelar</button>
+                    <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+                </div>
+
+            </form>
